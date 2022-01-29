@@ -1,0 +1,22 @@
+html {
+    font-size: 14px;
+    background-image: url(https://i.pinimg.com/originals/93/e4/e4/93e4e450d0821acf155a2e95e572511f.jpg);
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url(https://i.pinimg.com/originals/93/e4/e4/93e4e450d0821acf155a2e95e572511f.jpg);
+    background-size: cover;
+}

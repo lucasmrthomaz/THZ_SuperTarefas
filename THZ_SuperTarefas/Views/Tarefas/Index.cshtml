@@ -1,0 +1,59 @@
+﻿@model IEnumerable<THZ_SuperTarefas.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Tarefas To-Do";
+}
+
+<center>
+<h1>Minhas Super Tarefas >> </h1>
+<h4>Aqui você poderá fazer sua listinha :)</h4>
+</center>
+
+<br>
+<hr />
+<br><br>
+
+<table class="table">
+    <center>
+        <p>
+    <a asp-action="Create"><input type="button" value="[+] Tarefa" class="btn bg-success" /></a>
+</p>
+    </center>
+    <thead>
+        <tr>
+            <th>
+                Nome da tarefa
+                @{ /* @Html.DisplayNameFor(model => model.Nome) */ }
+            </th>
+            <th>
+                 Descrição
+                 @{ /* @Html.DisplayNameFor(model => model.Descricao) */ }
+            </th>
+            <th>
+                Foi concluida?
+                @{ /* @Html.DisplayNameFor(model => model.estaFeita) */ }
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estaFeita)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TarefaID"><input type="button" value="i" class="btn btn-primary" /></a> |
+                <a asp-action="Details" asp-route-id="@item.TarefaID"><input type="button" value="Ver +" class="btn alert-secondary" /></a> |
+                <a asp-action="Delete" asp-route-id="@item.TarefaID"><input type="button" value="(X)" class="btn btn-danger" /></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
